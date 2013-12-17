@@ -10,6 +10,13 @@ if( error_reporting() != 22519 )
 
 session_start();
 
+// проверка версии PHP
+$version = explode( '.', phpversion() );
+$version = $version[0].'.'.$version[1];
+if( $version < 5.4 ){
+	print('Устаревшая версия PHP, необходима версия не менее 5.4.');
+	exit();
+}
 
 ini_set( 'include_path', implode( ';', $config['path'] ) );
 
