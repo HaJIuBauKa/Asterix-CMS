@@ -38,6 +38,10 @@ class controller_get extends default_controller
 	//Выдать результат в формате JSON
 	private function getJSON()
 	{
+
+		print('Контроллер отключен в ядре.');
+		exit();
+
 		if( !headers_sent() ) {
 			header( 'Content-Type: text/html; charset=utf-8' );
 			header( "HTTP/1.0 200 Ok" );
@@ -69,6 +73,9 @@ class controller_get extends default_controller
 	//Выдать результат в формате JSON
 	private function getXML()
 	{
+
+		print('Контроллер отключен в ядре.');
+		exit();
 
 		$ref = $_SERVER[ 'HTTP_REFERER' ];
 
