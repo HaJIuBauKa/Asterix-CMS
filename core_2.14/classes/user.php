@@ -86,7 +86,8 @@ class user
 	//Учёт последнего входа в систему
 	public static function updateMyLoginDate( $my_id )
 	{
-		model::execSql( 'update `' . self::$table_name . '` set `date_logged`=NOW() where `id`="' . $my_id . '" limit 1', 'update' );
+		if( !@model::$config[ 'settings' ][ 'demo_mode' ] )
+			model::execSql( 'update `' . self::$table_name . '` set `date_logged`=NOW() where `id`="' . $my_id . '" limit 1', 'update' );
 	}
 
 	//Запоминаем пользователя после удачной авторизации
@@ -109,7 +110,7 @@ class user
 		}
 
 		//Проверка на пустой URL, такое могло случаться на движке моложе 2.14
-		if( !$user[ 'url' ] ) {
+		if( !$user[ 'url' ] && !@model::$config[ 'settings' ][ 'demo_mode' ] ) {
 			$user = model::$types[ 'sid' ]->toValue( 'sid', $user );
 			model::execSql( 'update `' . self::$table_name . '` set `url`="/users/' . mysql_real_escape_string( $user[ 'sid' ] ) . '" where `id`=' . intval( $user[ 'id' ] ) . ' limit 1', 'update' );
 		}

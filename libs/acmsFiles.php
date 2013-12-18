@@ -35,8 +35,10 @@ class acmsFiles{
 		
 		// Файл с локального сервера
 		}elseif( is_readable( $tmp ) ){
+
 			copy($tmp, $path);
 			chmod($path, $chmod);
+
 			return $path;
 		}
 		

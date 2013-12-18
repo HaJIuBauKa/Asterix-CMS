@@ -20,6 +20,10 @@ class controller_dev extends default_controller
 		if( model::$ask->method == 'GET' ) {
 			$this->preloadGet();
 		} else {
+
+			// Проверяем возможность вносить изменения
+			model::check_demo();
+
 			$this->controlGet();
 		}
 

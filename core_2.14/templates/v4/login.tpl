@@ -83,7 +83,7 @@
             </div>
             <div style="display: inline-block; width: 250px;">
                 <a href="http://mishinoleg.ru" style="color: #428bca;">Официальный сайт разработчика</a>
-                <a href="http://admin.opendev.ru" style="color:grey; margin-top: 10px;">Помощь по системе управления</a>
+                <a href="http://demo.asterix.opendev.ru" style="color:grey; margin-top: 10px;">Помощь по системе управления</a>
                 <a href="http://asterix.opendev.ru" style="color:grey;">Система управления сайтом, версия 2.14</a>
             </div>
         </div>
